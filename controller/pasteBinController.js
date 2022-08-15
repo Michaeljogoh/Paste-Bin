@@ -14,4 +14,15 @@ return res.status(200).json({newPasteBin})
 
 }
 
-module.exports = {createPasteBin}
+const getPasteBin = async (req , res) =>{
+    const shortUrl = await Url.findOne({shorturl: req.params.code});
+    if(!shortUrl) {
+        return res.status(404);
+    }
+
+    res.render(shortUrl.text)
+    res.status(200)
+
+}
+
+module.exports = {createPasteBin , getPasteBin}
