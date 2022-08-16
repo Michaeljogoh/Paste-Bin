@@ -4,11 +4,11 @@ const mongoose = require('mongoose');
 const pasteSchema =  new mongoose.Schema({
     text:{
         type: String,
-        require: true
+        required: true
       
     },
     
-    shorturl:{
+    shortUrl:{
         type:String
     },
     date:{
