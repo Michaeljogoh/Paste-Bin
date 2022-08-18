@@ -23,7 +23,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(pasteBinRoute);
 
 // cors
-app.use(cors({origin:"*" , credentials: true , methods:  ['GET','POST','DELETE','UPDATE','PUT','PATCH']}))
+app.use(cors({origin:"*" , credentials: true}))
 
 app.listen(PORT , ()=>{
     console.log(`Server Started at ${PORT}`)

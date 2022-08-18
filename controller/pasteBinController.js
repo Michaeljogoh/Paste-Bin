@@ -1,5 +1,6 @@
 const PasteBin = require('../models/pasteBin');
-const shortid = require('shortid');
+const nanoId = require('nano-id');
+ 
 
 
 const createPasteBin = async (req , res) =>{
@@ -8,7 +9,7 @@ const createPasteBin = async (req , res) =>{
         return res.status(400).json({error:"Add a text"})
     }
 
-const shortUrl = shortid.generate();
+const shortUrl = nanoId(13);
 
 const newPasteBin = await PasteBin.create({text , shortUrl});
 return res.status(200).json({newPasteBin})
