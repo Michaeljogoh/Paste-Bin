@@ -17,7 +17,7 @@ return res.status(200).json({newPasteBin})
 }
 
 const getPasteBin = async (req , res) =>{
-    const shortUrl = await Url.findOne({shortUrl: req.params.code});
+    const shortUrl = await PasteBin.findOne({shortUrl: req.params.code});
     if(!shortUrl) {
         return res.status(404);
     }
