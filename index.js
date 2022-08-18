@@ -6,6 +6,7 @@ const PORT = process.env.PORT
 const mongoose = require('mongoose');
 const PASTE_DB = process.env.PASTE_DB
 const pasteBinRoute = require('./route/pasteBinRoute');
+const authRoute = require('./route/authRoute');
 
 
 const connectDB = async () =>{
@@ -21,6 +22,7 @@ app.use(express.urlencoded({extended: true}));
 // Route
 
 app.use(pasteBinRoute);
+app.use('/auth', authRoute)
 
 // cors
 app.use(cors({origin:"*" , credentials: true}))
