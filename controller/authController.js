@@ -37,7 +37,7 @@ const login = async (req , res) =>{
     }
     const savedUser =  await pasteBinUser.findOne({email})
     if(!savedUser){
-     res.status(404).json({error:"Invalid Username"})
+     res.status(404).json({error:"Invalid Email"})
     }
 
 const doMatch =  await  bcrypt.compare(password, savedUser.password)

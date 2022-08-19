@@ -1,12 +1,11 @@
 const express = require('express');
-const app = express();
 const router = express.Router();
 const {createPasteBin , getPasteBin} = require('../controller/pasteBinController');
-const {authToken} = require('../middleware/authorization')
+const {isLoggedIn} = require('../middleware/authorization')
 
-router.post('/paste', authToken , createPasteBin);
+router.post('/paste', isLoggedIn , createPasteBin);
 
-router.get('/:code', authToken ,  getPasteBin)
+router.get('/:code', isLoggedIn ,  getPasteBin)
 
 
 module.exports = router
