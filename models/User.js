@@ -18,5 +18,5 @@ const pastinBinUserSchema = new mongoose.Schema({
     }
 });
 
-const pasteBinUser = mongoose.model('pasteBinUser', pastinBinUserSchema);
-module.exports = pasteBinUser;
+const User = mongoose.model('pasteBinUser', pastinBinUserSchema);
+module.exports = User;
