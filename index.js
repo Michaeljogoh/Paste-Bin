@@ -12,6 +12,7 @@ const authRoute = require('./route/authRoute');
 const connectDB = async () =>{
     await mongoose.connect(PASTE_DB, {useNewUrlParser: true , useUnifiedTopology: true})
     console.log('MongoDB');
+   
 }
 connectDB();
 

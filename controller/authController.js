@@ -42,8 +42,8 @@ const login = async (req , res) =>{
 
 const doMatch =  await  bcrypt.compare(password, savedUser.password)
             if(doMatch){
-               const token = jwt.sign({user_id:savedUser}, process.env.JWT , {expiresIn : '1d'})
-               res.status(200).json({token, user:savedUser})
+               const token = jwt.sign({user_id:savedUser._id}, process.env.JWT , {expiresIn : '1d'})
+               res.status(200).json({token , savedUser})
             } else {
                 return res.status(401).json("Invaild Password")
             }

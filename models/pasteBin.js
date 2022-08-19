@@ -18,5 +18,5 @@ const pasteSchema =  new mongoose.Schema({
 
 })
 
-const PasteBin = mongoose.model('url' , pasteSchema);
+const PasteBin = mongoose.model('Url' , pasteSchema);
 module.exports = PasteBin;

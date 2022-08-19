@@ -9,6 +9,8 @@ const createPasteBin = async (req , res) =>{
         return res.status(400).json({error:"Add a text"})
     }
 
+    
+
 const shortUrl = nanoId(13);
 
 const newPasteBin = await PasteBin.create({text , shortUrl});
@@ -19,7 +21,7 @@ return res.status(200).json({newPasteBin})
 const getPasteBin = async (req , res) =>{
     const shortUrl = await PasteBin.findOne({shortUrl: req.params.code});
     if(!shortUrl) {
-        return res.status(404);
+        return res.status(404).json({error:"Invalid Url"})
     }
 
     res.send(shortUrl.text)
