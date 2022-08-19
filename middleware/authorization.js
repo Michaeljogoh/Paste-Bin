@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/User')
 
-const authToken = async (req , res , next) =>{
+const isLoggedIn = async (req , res , next) =>{
 
 const {authorization} = req.headers
     if(!authorization){
@@ -24,4 +24,4 @@ next()
 
 })
 } 
-module.exports = { authToken }
+module.exports = { isLoggedIn }
