@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 
-const pastinBinUserSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     name:{
         type: String,
         required: true
@@ -18,5 +18,5 @@ const pastinBinUserSchema = new mongoose.Schema({
     }
 });
 
-const pasteBinUser = mongoose.model('pasteBinUser', pastinBinUserSchema);
-module.exports = pasteBinUser;
+const User = mongoose.model('User', userSchema);
+module.exports = User;
